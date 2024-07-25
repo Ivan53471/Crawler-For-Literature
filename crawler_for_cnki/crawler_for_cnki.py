@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from bs4 import BeautifulSoup
-from driver_init import driver_init
+from crawler_for_cnki.driver_init import driver_init
 
 def login(driver):
 
