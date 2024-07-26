@@ -1,10 +1,17 @@
 from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
-import re
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from driver_init import driver_init
+import time
 
-def get_all_page_url(driver):
+def get_all_page_url():
+
+    driver = driver_init(download_dir='D:/实习/苏州实验室/progress_in_chemistry')
+    
+    # 访问过刊浏览界面，该界面包含所有文章的链接
+    driver.get("https://manu56.magtech.com.cn/progchem/CN/archive_by_years")
+
+    time.sleep(3)
 
     # 使用XPATH定位到表格
     table_element = WebDriverWait(driver, 100).until(
@@ -28,6 +35,9 @@ def get_all_page_url(driver):
                     literature_urls.append(link)
             except:
                 pass
+    
+    # 退出浏览器
+    driver.quit()
 
     # print(literature_urls)
     return literature_urls

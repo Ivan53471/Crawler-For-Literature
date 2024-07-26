@@ -5,7 +5,7 @@ import time
 from crawler_for_progress_in_chemistry.driver_init import driver_init
 from search import search
 from get_one_page_article_links import get_one_page_article_links
-from crawler_for_progress_in_chemistry.get_download_urls import download
+from crawler_for_progress_in_chemistry.download import download
 
 def main():
     driver = driver_init(download_dir='D:/实习/苏州实验室/cnki')
