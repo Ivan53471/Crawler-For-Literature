@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from driver_init import driver_init
+from crawler_for_progress_in_chemistry.driver_init import driver_init
 from search import search
 from get_one_page_article_links import get_one_page_article_links
-from download import download
+from crawler_for_progress_in_chemistry.get_download_urls import download
 
 def main():
     driver = driver_init(download_dir='D:/实习/苏州实验室/cnki')
