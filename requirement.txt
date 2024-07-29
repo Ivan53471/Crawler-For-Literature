@@ -1,0 +1,4 @@
+selenium
+beautifulsoup4
+gensim
+opencc-python-reimplemented
