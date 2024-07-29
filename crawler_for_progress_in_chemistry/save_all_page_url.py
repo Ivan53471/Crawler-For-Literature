@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from driver_init import driver_init
+from tools.driver_init import driver_init
 import time
 
 def save_all_page_url():
