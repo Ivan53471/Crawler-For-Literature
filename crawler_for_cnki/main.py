@@ -8,7 +8,7 @@ from get_one_page_article_links import get_one_page_article_links
 from download import download
 
 def main():
-    driver = driver_init(download_dir='D:/实习/苏州实验室/cnki')
+    driver = driver_init(download_dir='E:\crawler_download\cnki')
     theme = '化学'
     total_pages = search(driver=driver, theme=theme)
     

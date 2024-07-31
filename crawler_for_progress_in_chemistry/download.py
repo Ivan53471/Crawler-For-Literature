@@ -65,7 +65,7 @@ def download():
     print(len(literature_urls))
     # 使用WebDriverPool复用WebDriver实例
     max_workers = 3
-    pool = WebDriverPool(max_workers, 'D:\实习\苏州实验室\progress_in_chemistry')
+    pool = WebDriverPool(max_workers, 'E:\crawler_download\progress_in_chemistry')
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         # 创建一个空字典来存储Future对象及其对应的WebDriver实例
         # futures = {}

@@ -39,7 +39,7 @@ def save_all_text():
     # 计数器初始化
     article_count = 0  
     # 打开输出文件
-    output_file = codecs.open('E:\wiki_cn_dataset\wiki.txt', 'w', encoding='utf-8')  
+    output_file = codecs.open('E:\crawler_download\wiki_cn_dataset\wiki.txt', 'w', encoding='utf-8')  
     # 初始化进度条
     progress_bar = tqdm(wiki_pages, desc=u'已获取0篇文章')  
 

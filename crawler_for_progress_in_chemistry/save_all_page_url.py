@@ -6,7 +6,7 @@ import time
 
 def save_all_page_url():
 
-    driver = driver_init(download_dir='D:/实习/苏州实验室/progress_in_chemistry')
+    driver = driver_init(download_dir='E:\crawler_download\progress_in_chemistry')
     
     # 访问过刊浏览界面，该界面包含所有文章的链接
     driver.get("https://manu56.magtech.com.cn/progchem/CN/archive_by_years")

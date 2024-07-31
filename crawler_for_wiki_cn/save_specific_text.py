@@ -21,14 +21,14 @@ def is_chemistry_related(title):
 
 # 在已有词条中获取和化学相关的词条
 def save_selected_text():
-    with open('E:\wiki_cn_dataset\selected_wiki.txt', 'w', encoding='utf-8') as output_file:
+    with open('E:\crawler_download\wiki_cn_dataset\selected_wiki.txt', 'w', encoding='utf-8') as output_file:
         current_entry = []
         chemistry_related = False
 
         # 计数器初始化
         article_count = 0  
         # 初始化进度条
-        progress_bar = tqdm(read_large_file('E:\wiki_cn_dataset\wiki.txt'), desc=u'已获取0篇文章')  
+        progress_bar = tqdm(read_large_file('E:\crawler_download\wiki_cn_dataset\wiki.txt'), desc=u'已获取0篇文章')  
         # 使用 tqdm 包装 read_large_file 生成器，显示进度条
         for line in progress_bar:
             if re.match(r'【.+】', line):
