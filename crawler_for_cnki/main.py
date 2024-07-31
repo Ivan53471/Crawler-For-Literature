@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from tools.driver_init import driver_init
+from driver_init import driver_init
 from search import search
 from get_one_page_article_links import get_one_page_article_links
 from download import download

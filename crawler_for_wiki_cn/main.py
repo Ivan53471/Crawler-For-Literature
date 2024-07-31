@@ -1,7 +1,8 @@
-from get_all_text import get_all_text
+from save_specific_text import save_specific_text
 
 def main():
-    get_all_text()
+    # save_all_text()
+    save_specific_text()
 
 if __name__ == "__main__":
     main()

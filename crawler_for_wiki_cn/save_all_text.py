@@ -35,7 +35,7 @@ def wiki_replace(page):
     return openCC.convert(content).strip()  
 
 # 获取中文维基百科的所有文章，经过整理后，保存在wiki.txt文件中
-def get_all_text():
+def save_all_text():
     # 计数器初始化
     article_count = 0  
     # 打开输出文件
@@ -51,9 +51,11 @@ def get_all_text():
             cleaned_text = wiki_replace(page)  
             # 将处理后的内容写入文件
             output_file.write(cleaned_text + '\n\n\n')  
-            article_count += 1  # 计数器加1
+            # 计数器加1
+            article_count += 1  
+            # 更新进度条描述
             if article_count % 100 == 0:
-                progress_bar.set_description(u'已获取%s篇文章' % article_count)  # 更新进度条描述
+                progress_bar.set_description(u'已获取%s篇文章' % article_count)  
 
     output_file.close()
 

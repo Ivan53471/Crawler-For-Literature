@@ -1,5 +1,5 @@
 import queue
-from tools.driver_init import driver_init
+from driver_init import driver_init
 
 # WebDriver实例池，实现复用实例，减少重复创建与销毁的开销
 # pool中存放着没有被使用的driver
