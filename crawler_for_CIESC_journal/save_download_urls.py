@@ -26,19 +26,20 @@ def process_url(url, driver, pool, all_download_urls):
         time.sleep(3)
         print(f"Page loaded: {url}")
 
-        # 查找所有class为"lunwen"的ul标签
-        ul_elements = driver.find_elements(By.CSS_SELECTOR, 'ul.lunwen')
+        # 等待页面加载完成并找到包含文章的ul元素
+        ul_element = WebDriverWait(driver, 100).until(
+            EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[1]/div[2]/ul'))
+        )
         
+        # 找到ul元素下所有id以"art"开头的div元素
+        div_elements = ul_element.find_elements(By.XPATH, ".//div[starts-with(@id, 'art')]")
+
         download_urls = []
-        for ul in ul_elements:
-            # 查找按钮的li标签
-            li_element = WebDriverWait(ul, 100).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, 'li.zhuyao-anniu'))
-            )
-            time.sleep(1)
+        for div in div_elements[1:]:
+            id = div.get_attribute('id')
             # 查找li元素下的PDF按钮
-            WebDriverWait(li_element, 100).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "a.pdf"))
+            WebDriverWait(div, 100).until(
+                EC.element_to_be_clickable((By.XPATH, f'//*[@id="{id}"]/div/dl/div[2]/dd[4]/a[3]'))
             ).click()
             time.sleep(1)
 
